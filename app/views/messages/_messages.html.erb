@@ -1,7 +1,7 @@
 <ul class="list-unstyled">
   <% messages.each do |message| %>
   <div>
-    <%= message.user.name%><span class="text-muted"><%= message.created_at %></span>
+    <%= message.user.name%>&emsp;<span class="text-muted"><%= message.created_at.to_s(:datetime_jp) %></span>
   </div>
       <div>
         <p><%= message.content %></p>

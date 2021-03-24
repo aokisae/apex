@@ -4,8 +4,7 @@
     <%= message.user.name%>&emsp;<span class="text-muted"><%= message.created_at.to_s(:datetime_jp) %></span>
   </div>
       <div>
-        <p><%= message.content %></p>
-      </div>
+        <p><%= simple_format( message.content) %></p>
     <% if logged_in? %>
       <% if current_user.admin? %>
       <%= link_to "Delete", message, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>

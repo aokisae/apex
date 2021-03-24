@@ -21,6 +21,12 @@
     
     <%= render 'layouts/navbar' %>
     
+    <% if logged_in? %>
+      <% if current_user.admin? %>
+        <%= link_to "ユーザー一覧", users_path %>
+      <% end %>
+    <% end %>
+    
     <div class="container">
     
       <%= render 'layouts/flash_messages' %>

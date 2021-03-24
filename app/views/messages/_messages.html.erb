@@ -6,6 +6,11 @@
       <div>
         <p><%= message.content %></p>
       </div>
+    <% if logged_in? %>
+      <% if current_user.admin? %>
+      <%= link_to "Delete", message, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+      <% end %>
+    <% end %>
   <% end %>
   <%= paginate messages %>
 </ul>

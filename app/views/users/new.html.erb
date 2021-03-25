@@ -1,12 +1,11 @@
 <div class="text-center">
 <h1>新規登録</h1>
-</div>
 
   <div class="row">
     <div class="col-sm-6 offset-sm-3">
-  
-         <%= form_with(model: @user, local: true) do |f| %>
-          <%= render 'layouts/error_messages', model: f.object %>
+      
+        <%= form_with(model: @user, local: true) do |f| %>
+        <%= render 'layouts/error_messages', model: f.object %>
         
         <div class="form-group">
           <%= f.label :name, '名前' %>
@@ -29,7 +28,7 @@
         </div>
   
         <%= f.submit '登録する', class: 'btn btn-primary btn-block' %>
-      <% end %>
+        <% end %>
     </div>
   </div>
 </div>

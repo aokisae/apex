@@ -1,16 +1,18 @@
 <% if users.any? %> 
   <ul class="list-unstyled">
     <% users.each do |user| %>
-    <div class="media-body">
-      <div>
-        <%= user.name %>
+    <main class="container">
+      <div class="p-4 p-md-5 mb-4 text-bark rounded bg-light">
+        <div class="text-center">
+          <%= user.name %>&emsp;
+          <% if logged_in? %>
+            <% if current_user.admin? %>
+              <%= link_to "消去する", user, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+            <% end %>
+          <% end %>
+        </div>
       </div>
-    <% if logged_in? %>
-      <% if current_user.admin? %>
-        <%= link_to "消去する", user, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
-      <% end %>
-    <% end %>
-    </div>
+    </main>
     <% end %>
   </ul>
 <% end %>

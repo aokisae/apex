@@ -16,21 +16,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
   </head>
-
+    
   <body>
     
     <%= render 'layouts/navbar' %>
     
-    <% if logged_in? %>
-      <% if current_user.admin? %>
-        <%= link_to "ユーザー一覧", users_path %>
-      <% end %>
-    <% end %>
-    
     <div class="container">
-    
-      <%= render 'layouts/flash_messages' %>
-      
+    <%= render 'layouts/flash_messages' %>
+     
     <div class="text-center">
       <h1>Apex Legends 細かすぎる募集掲示板</h1>
     </div>
@@ -48,8 +41,20 @@
         皆様ご協力をお願い致します。</p>
       </div>
     </div>
+    </div>
     
       <%= yield %>
-    
+
+    <footer>
+      <div class="text-center">
+        <% if logged_in? %>
+          <% if current_user.admin? %>
+            <%= link_to "ユーザー一覧", users_path %>
+          <% end %>
+        <% end %>
+      </div>
+    </footer>
+
+
   </body>
 </html>

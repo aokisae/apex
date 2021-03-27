@@ -1,15 +1,18 @@
 <ul class="list-unstyled">
   <% messages.each do |message| %>
-  <div>
-    <%= message.user.name%>&emsp;<span class="text-muted"><%= message.created_at.to_s(:datetime_jp) %></span>
-  </div>
-    <div>
-      <p><%= simple_format( message.content) %></p>
-    <% if logged_in? %>
-      <% if current_user.admin? %>
-        <%= link_to "消去する", message, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+  <div class="container">
+    <div class=" p-4 p-md-5 mb-4 text-info rounded bg-light text-left">
+      <p><%= message.user.name%>&emsp;<span class="text-muted"><%= message.created_at.to_s(:datetime_jp) %></span></p>
+      <p><%= simple_format(message.content) %></p>
+    </div>
+    <div class="text-right">
+      <% if logged_in? %>
+        <% if current_user.admin? %>
+          <%= link_to "消去する", message, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
+  </div>
   <% end %>
   <%= paginate messages %>
 </ul>

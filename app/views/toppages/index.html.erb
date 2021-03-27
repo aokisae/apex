@@ -1,15 +1,12 @@
- <% if logged_in? %>
-    <div class="row">
-      <aside class="col-sm-4">
-        <%= form_with(model: @message, local: true) do |f| %>
-          <div class="form-group">
-            <%= f.text_area :content, class: 'form-control', rows: 10 %>
-          </div>
+<% if logged_in? %>
+    <div class="container">
+      <%= form_with(model: @message, local: true) do |f| %>
+        <div class="form-group">
+          <%= f.text_area :content, class: 'form-control', rows: 5 %>
+        </div>
           <%= f.submit '投稿する', class: 'btn btn-primary btn-block' %>
-        <% end %>
-      </aside>
- <% end %>
-       <div class="col-sm-8">
-    　　<%= render 'messages/messages', messages: @messages %>
-       </div>
+      <% end %>
     </div>
+ <% end %>
+ 
+<%= render 'messages/messages', messages: @messages %>

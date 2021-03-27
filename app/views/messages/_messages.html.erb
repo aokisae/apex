@@ -7,7 +7,7 @@
       <p><%= simple_format( message.content) %></p>
     <% if logged_in? %>
       <% if current_user.admin? %>
-        <%= link_to "Delete", message, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+        <%= link_to "消去する", message, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
       <% end %>
     <% end %>
   <% end %>

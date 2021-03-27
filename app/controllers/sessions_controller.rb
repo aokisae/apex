@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  
   def new
   end
 
@@ -31,4 +32,5 @@ class SessionsController < ApplicationController
       return false
     end
   end
+  
 end

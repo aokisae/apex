@@ -53,4 +53,4 @@ production:
   pool: 5
   database: apex-board-1994_production
   username: apex-board-1994
-  password: <%= ENV['MESSAGE-BOARD_DATABASE_PASSWORD'] %>
+  password: 53e4b18698a0cf41de6829e31005cbae6c8ad10871f3ad443250e37b2a0f7ef0

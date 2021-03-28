@@ -15,4 +15,5 @@
  */
 p.sample{
 	background-color:#F0FFFF;
+	white-space: pre-wrap;
 }

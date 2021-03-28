@@ -51,6 +51,6 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: message-board_production
-  username: message-board
+  database: apex-bulletin-board_production
+  username: apex-bulletin-board
   password: <%= ENV['MESSAGE-BOARD_DATABASE_PASSWORD'] %>

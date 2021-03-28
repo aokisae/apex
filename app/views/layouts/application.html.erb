@@ -43,10 +43,10 @@
     </div>
     </div>
     
-      <%= yield %>
+      <%= yield %><br>
 
-    <footer>
-      <div class="text-center">
+    <footer class="footer mt-auto py-3 bg-dark">
+      <div class="container">
         <% if logged_in? %>
           <% if current_user.admin? %>
             <%= link_to "ユーザー一覧", users_path %>

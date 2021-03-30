@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2021_03_24_082910) do
 
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "content"
+    t.text "content"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_03_24_082910) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "admin"
+    t.boolean "admin", default: false
   end
 
   add_foreign_key "messages", "users"

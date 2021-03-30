@@ -4,14 +4,14 @@ class MessagesController < ApplicationController
   
   def create
     @message = current_user.messages.build(message_params)
-    if @message.save
-      flash[:success] = 'メッセージを投稿しました。'
-      redirect_to root_url
-    else
-      @messages = Message.all.order(created_at: :desc).page(params[:page])
-      flash.now[:danger] = 'メッセージの投稿に失敗しました。'
-      render 'toppages/index'
-    end
+      if @message.save
+        flash[:success] = 'メッセージを投稿しました。'
+        redirect_to root_url
+      else
+        @messages = Message.all.order(created_at: :desc).page(params[:page])
+        flash.now[:danger] = 'メッセージの投稿に失敗しました。'
+        render 'toppages/index'
+      end
   end
   
   def destroy

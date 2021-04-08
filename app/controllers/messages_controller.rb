@@ -23,7 +23,7 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:content)
+    params.require(:message).permit(:content, images_attributes: [:image_url])
   end
   
 end
